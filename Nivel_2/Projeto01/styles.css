@@ -6,14 +6,24 @@ text-align: center;
 /* Estilização do bloco com id = hero */
 #hero{
   width: 592px;
-  margin: auto;
+  /* Usar shor-hand para margin */
+    /*Se for usar dois valores: primeiro valor é pro vertical e segundo para horizontal*/
+    /*Se for usar três valores: primeiro valor é pro top e segundo para horizontal e terceiro para o bottom*/
+    /*Se for usar quatro valores: segue o sentido horario partindo do top*/
+  margin: 0 auto 72px;
+/* Foi necessário usar o margin auto pois foi definido o tamanho da "caixa do texto" logo ele não respeita mais o text align center */
+}
+/* Coloca uma margen inferior na imagem */
+#hero img{
+  margin-bottom: 72px;
 }
 /* Estilização do cabeçalho, se aplica a todos os cabeçalhs do código */
 h1{
   font-family: 'Inter', sans-serif;
   font-size: 49px;
   line-height: 56px; /* 114.286% */
-font-weight: normal;
+  font-weight: normal;
+  margin-bottom: 32px;
 }
 /* Estilização do span dentro do cabeçalho */
 h1 span {
@@ -25,15 +35,33 @@ span{
   color: #ff9900;
 }
 
-/* estilização do p, se aplica a todos */
+/* estilização do p e do elemento com id footer, se aplica a todos */
 
-p{
-  color: #7D7987;
-  font-size: 14px;
-  line-height: 28px;
-}
 /* estilização do a, se aplica a todos */
 a{
   color: #F90;
   text-decoration-line: underline;
+}
+p, #footer{
+  color: #7D7987;
+  font-size: 14px;
+  line-height: 28px;
+}
+/* Seleciona o a dentro do elemento com id footer que possui um a antes dele */
+#footer a + a {
+  margin-left: 28px;
+}
+/* Adiciona uma linha na página */
+#line{
+  width: 568px;
+  height: 0px;
+  border: 1px solid #ECEFF2;
+  margin: 0 auto 8px;
+}
+
+#balls{
+  /* Coloca o elemento em uma posição fixa e abre novas opções de posicioamento como aquelas abaixo dele */
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
 }
