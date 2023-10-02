@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+}
+
+.page{
+    width: 1000px;
+    margin: 65px auto 0;
+}
+
+nav{
+    /* Coloca os conteudos da caixa alinhados lado a lado */
+    display: flex;
+    /* coloca um espaço entre os cinteudos */
+    justify-content: space-between;
+    /* Alinha elementos ao centro */
+    align-items: center;
+    /* Adiciona a margem inferior */
+    margin-bottom: 55px;
+
+}
+
+ul{
+    /* Remove o ponto da lista desordenada */
+    list-style: none;
+    display: flex;
+    /* Adiciona um espaço apenas entre os elementos */
+    gap: 48px;
+    /* Remove a matgem e o padding dos elementos */
+    margin: 0;
+    padding: 0;
+}
