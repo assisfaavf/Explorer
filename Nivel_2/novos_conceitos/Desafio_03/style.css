@@ -1,0 +1,41 @@
+body {
+  background-color: #2f2e41;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 71px 98px 100px;
+}
+
+header ul {
+  list-style: none;
+
+  gap: 64px;
+
+  display: flex;
+}
+
+header ul li a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+
+  width: 1090px;
+  height: 280px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+}
+
+#padlock {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}

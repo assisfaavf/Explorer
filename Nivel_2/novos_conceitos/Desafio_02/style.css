@@ -3,11 +3,7 @@ body {
 
   font-family: "Open Sans", sans-serif;
 
-  background: linear-gradient(
-    180deg,
-    rgba(227, 255, 248, 0) 80%,
-    rgba(227, 255, 248, 0.4) 100%
-  );
+  background: linear-gradient(180deg, rgb(227, 255, 248, 0) 82.08%, rgb(227, 255, 248, 0.38) 100%);
 
   min-height: 100vh;
 }
@@ -18,7 +14,7 @@ body {
   padding-top: 65px;
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,12 +22,12 @@ nav {
   margin-bottom: 55px;
 }
 
-ul {
+.list {
   display: flex;
+  gap: 48px;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 48px;
 }
 
 a {
@@ -39,21 +35,27 @@ a {
   text-decoration: none;
 }
 
-ul li a {
-  opacity: 0.5;
+.list .item a {
+    opacity: 0.5;
 }
 
-ul li a:hover {
+.list .item a:hover {
   font-weight: bold;
   opacity: 1;
 }
 
-h1,
-ul {
+.list,
+.title {
   font-family: "Mulish", sans-serif;
 }
 
-h1 {
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
   font-size: 49px;
   line-height: 56px;
   color: #1f1534;
@@ -63,12 +65,12 @@ h1 {
   width: 490px;
 }
 
-h1 span {
+.title span {
   color: #89c5cc;
   font-weight: bold;
 }
 
-section p {
+.subtitle {
   font-size: 14px;
   line-height: 28px;
   color: #7d7987;
@@ -76,17 +78,18 @@ section p {
   margin: 40px 0;
 }
 
-button {
+.button {
   color: white;
+  text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
 
-  background: #69b99d;
+  background: #69B99D;
   border: 0;
-  padding: 15px 32px 15px;
+  padding: 14px 32px 15px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
 
   border-radius: 4px;
@@ -94,11 +97,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #4ea788;
-}
-
-footer {
+.footer {
   font-size: 14px;
   line-height: 28px;
 
@@ -107,18 +106,12 @@ footer {
   margin-top: 80px;
 }
 
-footer a {
+.footer a {
   font-weight: bold;
 }
 
 #balls {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
