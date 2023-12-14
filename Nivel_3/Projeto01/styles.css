@@ -1,7 +1,19 @@
-body {
-  background-color: #e5e5e5;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+select,
+input,
+textarea {
   font-family: "Poppins", sans-serif;
   font-weight: regular;
+}
+body {
+  background-color: #e5e5e5;
 }
 /* Coloca una camada antes de algo que no caso é esse conteudo vazio */
 body::before {
@@ -40,6 +52,8 @@ header h1 {
   font-size: 36px;
   line-height: 42px;
   color: #ffffff;
+
+  margin-bottom: 24px;
 }
 
 header p {
@@ -61,84 +75,58 @@ form {
   background-color: #fafafc;
 }
 
-form input {
-  width: 600px;
-  height: 60px;
-  background-color: #fafafc;
-  margin: 8px 0 24px;
-  border-radius: 8px;
+fieldset {
+  border: none;
+  margin-bottom: 48px;
 }
 
-form textarea {
-  width: 600px;
-  height: 160px;
-  background-color: #fafafc;
-  border-radius: 8px;
+fieldset legend {
+  color: var(--Texts-Ttulos, #32264d);
+  font-family: "Archivo", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px; /* 141.667% */
+
+  width: 100%;
+
+  border-bottom: 1px solid;
+  border-color: #e6e6f0;
+  padding-bottom: 16px;
 }
 
-form select {
-  width: 600px;
-  height: 60px;
-  background-color: #fafafc;
-  border-radius: 8px;
-}
-
-form label {
-  background-color: #fafafc;
-}
-
-form h2 {
-  background-color: #fafafc;
-  margin: 48px auto 16px 0;
-}
-
-#checkbox {
-  flex-direction: row;
-  width: 600px;
-  height: 24px;
-  margin-bottom: 50px;
-  margin-top: 24px;
-  background-color: #fafafc;
-}
-
-#evento {
-  width: 24px;
-  height: 24px;
-}
-
-#informacoes {
+.input-wrapper {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  background-color: #fafafc;
 }
 
-#privacidade {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #fafafc;
+.input-wrapper label {
+  color: #4e4958;
+
+  font-size: 14px;
+  line-height: 24px;
+
+  margin-bottom: 8px;
 }
 
-#deh {
-  display: flex;
-  align-items: center;
-  background-color: #fafafc;
+.input-wrapper label span {
+  margin-left: 12px;
+
+  color: #c1bccc;
+
+  font-size: 12px;
+  line-height: 20px; /* 166.667% */
 }
 
-#deh div {
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #fafafc;
-}
-#deh #data {
-  width: 300px;
-}
+.input-wrapper input {
+  border-radius: 8px;
+  border: 1px solid var(--Back-Lines-in-white, #e6e6f0);
+  background: var(--Shapes-02, #fafafc);
 
-#deh #inicio {
-  width: 130px;
-}
+  height: 56px;
 
-#deh #fim {
-  width: 130px;
+  padding: 0 24px;
+
+  color: var(--Texts-Inputs, #c1bccc);
+  font-size: 16px;
+  line-height: 26px;
 }
