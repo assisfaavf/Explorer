@@ -75,7 +75,7 @@ fieldset {
 .fieldset-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 }
 
 fieldset legend {
@@ -86,7 +86,7 @@ fieldset legend {
 
   width: 100%;
 
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #e6e6f0;
   padding-bottom: 16px;
 }
 
@@ -117,18 +117,19 @@ fieldset legend {
 .input-wrapper input,
 .input-wrapper textarea,
 .input-wrapper select {
-  border-radius: 8px;
-  border: 1px solid var(--Back-Lines-in-white, #e6e6f0);
-  background: var(--Shapes-02, #fafafc);
+  background: #fafafc;
 
-  width: 100%;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+
   height: 56px;
 
   padding: 0 24px;
 
-  color: var(--Texts-Inputs, #a9a7af);
   font-size: 16px;
   line-height: 26px;
+
+  color: #6c6a71;
 }
 
 .input-wrapper textarea {
@@ -165,11 +166,11 @@ label span:hover {
 }
 
 .checkbox-wrapper label {
-  margin: 0;
-
   display: flex;
   align-items: center;
   gap: 16px;
+
+  margin: 0;
 }
 
 /* Remove o elemento se ter que usar o display none, mantendo assim a assessibilidade da pagina */
@@ -225,18 +226,23 @@ footer {
 
 footer .button {
   height: 56px;
-  background-color: #04d361;
+  background: #04d361;
   border: 0;
   border-radius: 8px;
 
-  color: #fff;
-
   font-family: "Archivo";
-  font-size: 16px;
+
   font-weight: 600;
-  line-height: 26px; /* 162.5% */
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #ffffff;
 }
 
 footer .button:hover {
-  background-color: #037c3a;
+  background: #08a04c;
+}
+
+input:invalid {
+  border: 1px solid #ff1010;
 }
