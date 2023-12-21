@@ -21,7 +21,7 @@
         </div>
       </header>
 
-      <form>
+      <form id="my-form">
         <!-- Agrupamento de Campos -->
         <fieldset>
           <div class="fieldset-wrapper">
@@ -31,14 +31,14 @@
               <label for="Titulo"
                 >Titulo do Evento <span>(mínimo 8 caracteres)</span></label
               >
-              <input type="text" name="Titulo" id="Titulo" />
+              <input type="text" name="Titulo" id="Titulo" required minlength="8"/>
             </div>
 
             <div class="input-wrapper">
               <label for="link"
                 >Link do Evento <span>(comece com https://)</span></label
               >
-              <input type="text" name="link" id="link" />
+              <input type="text" name="link" id="link" required/>
             </div>
 
             <div class="input-wrapper">
@@ -71,7 +71,7 @@
                 >Email do administrador
                 <span>(digite um email valido)</span></label
               >
-              <input type="text" name="email" id="email" />
+              <input type="text" name="email" id="email" required />
             </div>
 
             <div class="input-wrapper">
@@ -79,7 +79,7 @@
                 >Senha de acesso dos participantes
                 <span>(mínimo 8 caracteres)</span></label
               >
-              <input type="password" name="senha" id="senha" />
+              <input type="password" name="senha" id="senha" required minlength="8" />
             </div>
             <div class="checkbox-wrapper">
               <input type="checkbox" name="evento" id="evento" />
@@ -95,24 +95,24 @@
             <div class="col-3">
               <div class="input-wrapper">
                 <label for="data">Data</label>
-                <input type="date" name="data" id="data" />
+                <input type="date" name="data" id="data" required/>
               </div>
 
               <div class="input-wrapper">
                 <label for="inicio">Das</label>
-                <input type="time" name="inicio" id="inicio" />
+                <input type="time" name="inicio" id="inicio" required/>
               </div>
 
               <div class="input-wrapper">
                 <label for="fim">Até</label>
-                <input type="time" name="fim" id="fim" />
+                <input type="time" name="fim" id="fim" required/>
               </div>
             </div>
           </div>
         </fieldset>
       </form>
       <footer>
-        <input class="button" type="submit" value="salvar evento" />
+        <input class="button" form="my-form" type="submit" value="salvar evento" />
       <footer>
     </section>
   </body>
