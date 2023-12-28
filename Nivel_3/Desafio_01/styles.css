@@ -22,9 +22,14 @@ body::before {
   background: #535971;
 }
 
+.page {
+  width: 750px;
+  margin: auto;
+}
+
 header {
-  margin: 140px 678px 58px 345px;
-  gap: 18px;
+  width: 417px;
+  margin-top: 140px;
 }
 
 header h1 {
@@ -42,4 +47,47 @@ header p {
   font-size: 20px;
   font-weight: 400;
   line-height: normal;
+}
+
+form {
+  border-radius: 20px 20px 0px 0px;
+  background: #fff;
+
+  margin-top: 58px;
+
+  padding: 64px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 19px;
+}
+
+fieldset legend {
+  color: #535971;
+
+  font-family: Staatliches;
+  font-size: 24px;
+  line-height: 34px; /* 141.667% */
+
+  width: 100%;
+
+  border-bottom: 1px solid #e6e6f0;
+  padding-bottom: 16px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
 }
