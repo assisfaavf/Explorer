@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Mentoria</title>
   </head>
   <body>
     <section class="page">
@@ -44,11 +44,74 @@
               <label for="password"
                 >Senha <span>(mínimo de 6 caracteres)</span></label
               >
-              <input type="password" name="senha" id="password" />
+              <input type="password" name="senha" id="password" minlength="6" />
             </div>
           </div>
         </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>INFORMAÇÕES DO MENTOR</legend>
+
+            <div class="input-wrapper">
+              <label for="mentor"
+                >Nome do seu mentor <span>(só o primeiro nome)</span></label
+              >
+              <input type="text" id="mentor" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Seus horarios disponíveis</legend>
+
+            <fieldset class="Primeira">
+              <legend>Primeira mentoria</legend>
+              <div class="col-3">
+                <div class="input-wrapper">
+                  <label for="data">Data</label>
+                  <input type="date" name="data" id="data" required />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="das">Das</label>
+                  <input type="time" name="inicio" id="das" required />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="ate">Até</label>
+                  <input type="time" name="fim" id="ate" required />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="Segunda">
+              <legend>Segunda mentoria</legend>
+              <div class="col-3">
+                <div class="input-wrapper">
+                  <label for="data">Data</label>
+                  <input type="date" name="data" id="data" required />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="das">Das</label>
+                  <input type="time" name="inicio" id="das" required />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="ate">Até</label>
+                  <input type="time" name="fim" id="ate" required />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
       </form>
+
+      <footer>
+        <input class="button" form="my-form" type="submit" value="salvar" />
+      </footer>
     </section>
   </body>
 </html>
