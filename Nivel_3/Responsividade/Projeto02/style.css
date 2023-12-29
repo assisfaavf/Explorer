@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  width: 375px;
+  height: 870px;
+
+  background: var(--Bg_Light, #ece9fd);
+
+  padding: 60px 23px 66px;
+
+  font-family: "Epilogue", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px; /* 120% */
+}
+
+p {
+  color: var(--Text_Dark_Gray, rgba(10, 0, 57, 0.64));
+  font-feature-settings: "clig" off, "liga" off;
+
+  font-size: 16px;
+  line-height: 32px; /* 200% */
+}
+
+ul {
+  list-style: none;
+
+  margin-top: 77px;
+}
+
+ul li {
+  color: var(--Text_Dark, #090039);
+  font-feature-settings: "clig" off, "liga" off;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+}
+
+ul li span {
+  color: var(--Text_Dark, #090039);
+  font-feature-settings: "clig" off, "liga" off;
+
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 80px; /* 111.111% */
+  letter-spacing: -2px;
+}
