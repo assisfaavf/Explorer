@@ -5,53 +5,117 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 body {
-  margin: auto;
-  width: 375px;
-  height: 870px;
+  font-family: "Epilogue", sans-serif;
 
   background: var(--Bg_Light, #ece9fd);
 
-  padding: 60px 23px 66px;
+  padding: 6rem 2.3rem 6.6rem;
+  font-size: 1.6rem;
+}
 
-  font-family: "Epilogue", sans-serif;
+main {
+  max-width: 33rem;
+
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: 800;
-  line-height: 48px; /* 120% */
+  line-height: 4.8rem; /* 120% */
+  color: var(--Text_Dark, #090039);
+
+  margin-bottom: 1.5rem;
 }
 
-p {
+main p:first-child {
+  color: var(--Text_Dark_Accent, #7158ef);
+
+  line-height: 3.2rem; /* 200% */
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+
+  margin-bottom: 1.7rem;
+}
+
+h1 + p {
   color: var(--Text_Dark_Gray, rgba(10, 0, 57, 0.64));
-  font-feature-settings: "clig" off, "liga" off;
 
-  font-size: 16px;
-  line-height: 32px; /* 200% */
+  line-height: 3.2rem; /* 200% */
+
+  margin-bottom: 3.2rem;
 }
 
+a {
+  color: var(--Text_Dark, #2d13c5);
+
+  text-decoration: none;
+
+  line-height: 3.2rem; /* 200% */
+}
+
+a:hover {
+  color: var(--Text_Dark, #03010f);
+  font-weight: bold;
+}
 ul {
   list-style: none;
 
-  margin-top: 77px;
+  margin-top: 7.2rem;
 }
 
 ul li {
   color: var(--Text_Dark, #090039);
   font-feature-settings: "clig" off, "liga" off;
 
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 32px; /* 133.333% */
+  line-height: 3.2rem; /* 133.333% */
+
+  max-width: 25.7rem;
+  display: flex;
+  gap: 3.8rem;
 }
 
 ul li span {
   color: var(--Text_Dark, #090039);
   font-feature-settings: "clig" off, "liga" off;
 
-  font-size: 72px;
+  font-size: 7.2rem;
   font-weight: 800;
-  line-height: 80px; /* 111.111% */
+  line-height: 8rem; /* 111.111% */
   letter-spacing: -2px;
+
+  width: 3.4rem;
+}
+ul li + li {
+  margin-top: 3.2rem;
+}
+
+/* Media Queries */
+@media (min-width: 40em) {
+  body {
+    padding: 8rem;
+  }
+  main {
+    max-width: 1020px;
+
+    display: flex;
+    gap: 11.6rem;
+  }
+
+  main > div {
+    max-width: 484px;
+  }
+
+  ul li {
+    gap: 5.3rem;
+    max-width: 450px;
+    align-items: center;
+  }
 }
