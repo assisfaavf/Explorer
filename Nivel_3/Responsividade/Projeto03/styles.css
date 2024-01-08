@@ -99,5 +99,15 @@ button:hover {
 @media (min-width: 768px) {
   main {
     flex-direction: row;
+
+    max-width: fit-content;
+    gap: 16rem;
+  }
+
+  .recipe {
+    max-width: 43.5rem;
+  }
+  .prepare {
+    max-width: 52.5rem;
   }
 }
