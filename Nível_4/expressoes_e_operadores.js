@@ -44,3 +44,28 @@ increment--;
 console.log(decrement);
 // Exponencial (**)
 console.log(3 ** 2);
+
+// Operadores de Comparação
+// - irá comparar valores e retornar um boolean (true ou false)
+// Igual a (==)
+let one = 1;
+let two = 2;
+
+console.log(two == 1);
+console.log(one == "1");
+
+// Diferente de (!=)
+
+console.log(one != two);
+console.log(one != 1);
+console.log(one != "1");
+
+// Estritamente igual a (===)
+
+console.log(one === "1");
+console.log(one === 1);
+
+// Estritamente diferente de (!==)
+
+console.log(two !== "2");
+console.log(two !== 2);
