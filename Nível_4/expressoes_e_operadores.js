@@ -69,3 +69,32 @@ console.log(one === 1);
 
 console.log(two !== "2");
 console.log(two !== 2);
+
+// Operadores de Atribuição (assignment)
+let x;
+console.log(x);
+
+// Assignment (atribuição)
+x = 1;
+
+// adition assignment (adição a atribuição)
+x += 2;
+
+// subtraction assignment (subtração a atribuição)
+x -= 1;
+
+// multiplication assignment (multiplicação a adição)
+x *= 2;
+
+// Division assignment (divisão a adição)
+x /= 2;
+
+// Operador condicional Ternário
+let pao = true;
+let queijo = true;
+
+// café da manhã top
+
+const niceBreakfast = pao && queijo ? "café top" : "café paia";
+
+console.log(niceBreakfast);
