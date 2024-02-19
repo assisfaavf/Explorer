@@ -100,5 +100,9 @@ const niceBreakfast = pao && queijo ? "café top" : "café paia";
 console.log(niceBreakfast);
 
 // Operadores para string (string operators)
-// Comparação
+
+// Comparação (comparison)
 console.log("a" == "b");
+
+// Concatenação
+console.log("a" + "b");
