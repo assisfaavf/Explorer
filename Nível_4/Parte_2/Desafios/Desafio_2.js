@@ -40,9 +40,18 @@ const students = [
   },
 ];
 
-function average(students) {
+function average(firstGrade, secondGrade) {
   return (firstGrade + secondGrade) / 2;
 }
 
+function printAverage(student) {
+  if (average(student.firstGrade, student.secondGrade) >= 7) {
+    return `Parabens ${student.name}! você foi aprovado`;
+  } else {
+    return `Boa sorte na proxima ${student.name}!`;
+  }
+}
 for (let student of students) {
+  let averageMessage = printAverage(student);
+  alert(averageMessage);
 }
