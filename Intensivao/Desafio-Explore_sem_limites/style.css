@@ -137,12 +137,10 @@ textarea {
   width: 26.5rem;
 }
 
+/* Contact Section */
 #contact {
-  background: var(--white);
-
   width: 100%;
   height: 100%;
-
   padding: 7.8rem 3.9rem 6.5rem;
 }
 
@@ -151,14 +149,147 @@ textarea {
 }
 
 #contact form .input-wrapper {
-  width: 100%;
-
   margin-bottom: 2.4rem;
 }
 
-#contact form .input-wrapper input,
-#contact form .input-wrapper textarea {
-  padding: 1.2rem 1.6rem;
-
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  border: 0.15rem solid var(--text-base-color);
   border-radius: 1.6rem;
+  padding: 1.2rem 1.6rem 1.6rem;
+  color: var(--text-base-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact form textarea {
+  height: 12.6rem;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--text-base-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact form input::placeholder {
+  padding-left: 2.8rem;
+}
+
+#contact form button {
+  background: var(--gradient-background);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  padding: 1rem 1.6rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: filter 200ms;
+}
+
+#contact form button:hover {
+  filter: brightness(0.9);
+}
+
+#name {
+  background: url(./images/person.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(./images/mail.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+/* Footer Section */
+footer {
+  background: var(--gradient-background);
+
+  padding: 3.2rem 1.6rem;
+}
+
+footer p {
+  color: var(--white);
+  font-size: 1.9rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* @media */
+
+@media (min-width: 1440px) {
+  /* Global Styles */
+  h1 {
+    font-size: 5.8rem;
+    line-height: 7.3rem;
+    margin: 0 0 0.8rem;
+  }
+
+  /* Hero Section */
+  #hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.9rem 10.3rem 10.9rem;
+    max-height: 83.6rem;
+  }
+
+  #hero .hero-cta {
+    order: 1; /* Flexbox item property: https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Flexbox#ordena%C3%A7%C3%A3o_de_elementos_flex */
+    margin-top: 31.2rem;
+  }
+
+  #hero .astronaut {
+    order: 2;
+  }
+
+  #hero .hero-cta p {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 17.9rem;
+  }
+
+  #hero .hero-cta .button-down {
+    margin: 0;
+    justify-self: flex-end;
+  }
+
+  /* Cards Section */
+  #cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    padding: 6.4rem 11.1rem 8rem;
+  }
+
+  #cards .card {
+    padding: 3.2rem;
+    border-radius: 2.4rem;
+  }
+
+  #cards .card img {
+    width: 9.7rem;
+    margin-bottom: 4rem;
+  }
+
+  /* Contact Section */
+  #contact {
+    display: flex;
+    align-items: center;
+    gap: 9.2rem;
+    padding: 0;
+    height: 62.2rem;
+    margin: 0 auto;
+    background: url(./images/stars.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  #contact form {
+    flex: 1;
+    margin-left: 10.9rem;
+  }
+  #contact .stars {
+    flex: 1;
+  }
 }
