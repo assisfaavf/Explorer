@@ -158,3 +158,34 @@ input {
 .modal-card button:hover {
   transform: scale(1.2);
 }
+
+/* Alert error */
+
+.screen-error.open {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translatey(0);
+}
+
+.screen-error {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+  transition: transform(0.5s);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+
+  background: red;
+  color: #fff;
+
+  padding: 0.8rem 0;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
