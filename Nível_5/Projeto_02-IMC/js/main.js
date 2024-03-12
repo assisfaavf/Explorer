@@ -109,8 +109,10 @@
 // _______________________________________________________________
 // Código utilizando modulos (import e export)
 
-// Importando o modal
+// Importando os modules
 import { modal } from "./modal.js";
+import { AlertError } from "./alert-error.js";
+import { notANumber, calculateIMC } from "./utils.js";
 
 // Variáveis
 const form = document.querySelector("form");
@@ -124,22 +126,37 @@ form.onsubmit = function (event) {
   const weight = inpuWeight.value;
   const height = inputHeight.value;
 
-  const result = IMC(weight, height);
-  const message = `Seu IMC é de ${result}`;
+  const weightOrHeightIsNotANumber = notANumber(weight) || notANumber(height);
+
+  if (weightOrHeightIsNotANumber) {
+    AlertError.open();
+    // Se uma função ver um return ela para de executar
+    return;
+  }
+
+  AlertError.close();
+
+  const result = calculateIMC(weight, height);
+  displayResultMessage(result);
+};
+
+// Função que mostra os resultados
+function displayResultMessage(result) {
+  const message = `Seu IMC é ${result}`;
 
   modal.message.innerText = message;
   modal.open();
-};
-
-// Função para calcular o IMC
-function IMC(weight, height) {
-  return (weight / (height / 100) ** 2).toFixed(2);
 }
 
+// Calcular o IMC com o entrer
 window.addEventListener("keydown", handleKeyDown);
-
 function handleKeyDown(event) {
   if (event.key === "enter") {
     modal.open();
   }
 }
+
+// Desafio : Fechar a janela de erro ao digitar no campo
+
+inpuWeight.oninput = () => AlertError.close();
+inputHeight.oninput = () => AlertError.close();
