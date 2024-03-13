@@ -30,24 +30,22 @@
         <span id="seconds">00</span>
       </sction>
       <section id="controls" class="flex">
-        <button 
-        data-action="toggleRunnig"
-        class="ph ph-play-circle">
+        <button data-action="toggleRunning" class="ph ph-play-circle">
           <span class="sr-only">Iniciar timer</span>
         </button>
-        <button class="ph ph-pause-circle">
+        <button data-action="toggleRunnig" class="ph ph-pause-circle">
           <span class="sr-only">Pausar timer</span>
         </button>
-        <button class="ph ph-timer secondary">
+        <button data-action="set" class="ph ph-timer secondary">
           <span class="sr-only">Ajustar timer</span>
         </button>
-        <button class="ph ph-stop-circle secondary">
+        <button data-action="reset" class="ph ph-stop-circle secondary">
           <span class="sr-only">Para timer</span>
         </button>
-        <button class="ph ph-speaker-none secondary">
+        <button data-action="toggleMusic" class="ph ph-speaker-none secondary">
           <span class="sr-only">Ativar música de fundo</span>
         </button>
-        <button class="ph ph-speaker-high">
+        <button data-action="toggleMusic" class="ph ph-speaker-high">
           <span class="sr-only">Desativar música de fundo</span>
         </button>
       </section>
