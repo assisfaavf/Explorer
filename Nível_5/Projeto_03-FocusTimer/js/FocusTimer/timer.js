@@ -1,7 +1,38 @@
 import state from "./state.js";
 import * as el from "./elements.js";
+import { reset } from "./actions.js";
 
-export function updatDisplay(minutes, seconds) {
+// Lógica do timer
+export function countDown() {
+  if (!state.isRunning) {
+    return;
+    // Só aceita o start, se o pause for pressionado mudando o estado a aplicação irá parar
+  }
+
+  let minutes = Number(el.minutes.textContent);
+  let seconds = Number(el.seconds.textContent);
+
+  seconds--;
+
+  if (seconds < 0) {
+    seconds = 59;
+    minutes--;
+  }
+
+  if (minutes < 0) {
+    reset();
+    return;
+  }
+
+  updateDisplay(minutes, seconds);
+
+  setTimeout(() => countDown(), 1000);
+  // setTimeout executa uma função callback após um tempo, em milisegundos, determinado no segundo argumento
+
+  // Recurssão -> quando uma função é chamada dentro dela mesma e entra em loop, é sempre necessário pensar em um modo de para o loop para evitar erros
+}
+
+export function updateDisplay(minutes, seconds) {
   // Usando o nullish operator
   minutes = minutes ?? state.minutes;
   // Se o valor passado for "null" ele substitui pelo valor de minutes no state
