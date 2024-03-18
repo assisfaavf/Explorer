@@ -1,9 +1,13 @@
 import state from "./state.js";
 import * as el from "./elements.js";
 import { reset } from "./actions.js";
+import { kitchenTimer } from "./sounds.js";
 
 // Lógica do timer
 export function countDown() {
+
+  clearTimeout(state.countDownId)
+
   if (!state.isRunning) {
     return;
     // Só aceita o start, se o pause for pressionado mudando o estado a aplicação irá parar
@@ -21,12 +25,13 @@ export function countDown() {
 
   if (minutes < 0) {
     reset();
+    kitchenTimer.play()
     return;
   }
 
   updateDisplay(minutes, seconds);
 
-  setTimeout(() => countDown(), 1000);
+  state.countDownId = setTimeout(() => countDown(), 1000);
   // setTimeout executa uma função callback após um tempo, em milisegundos, determinado no segundo argumento
 
   // Recurssão -> quando uma função é chamada dentro dela mesma e entra em loop, é sempre necessário pensar em um modo de para o loop para evitar erros
