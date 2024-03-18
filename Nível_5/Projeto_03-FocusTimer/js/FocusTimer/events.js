@@ -5,9 +5,8 @@ export function registerControls() {
   controls.addEventListener("click", (event) => {
     const action = event.target.dataset.action;
     if (typeof actions[action] != "function") {
-      // return;
+      return;
     }
-    console.log(action);
-    actions[`"${action}"`]();
+    actions[action]();
   });
 }
