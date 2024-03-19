@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" onclick="route()">Home</a>
+      <a href="/about" onclick="route()">Sobre</a>
+      <a href="/contact" onclick="route()">Contato</a>
+      <a href="/404" onclick="route()">404</a>
+    </nav>
+
+    <div id="app"></div>
+
+    <script>
+      const routes = {
+        "/": "/pages/home.html",
+        "/about": "/pages/about.html",
+        "/contact": "/pages/contact.html",
+        404: "/pages/404.html",
+      };
+
+      function route(event) {
+        event = event || window.event;
+        // Se não encontrar um evento usar o evento geral presente na página
+        event.preventDefault();
+
+        window.history.pushState({}, "", event.target.href);
+
+        handle();
+      }
+
+      function handle() {
+        // const pathName = window.location.pathname;
+        const { pathname } = window.location;
+        // Forma diferente de pegar a propriedade pathname, melhor usar assim pricipalemnte se for necessário mais de uma propriedáde
+
+        const route = routes[pathname] || routes[404];
+
+        fetch(route).then((data) => {
+          console.log(data);
+        });
+
+        console.log(route);
+      }
+    </script>
+  </body>
+</html>
