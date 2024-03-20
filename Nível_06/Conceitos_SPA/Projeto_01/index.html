@@ -16,37 +16,8 @@
 
     <div id="app"></div>
 
-    <script>
-      const routes = {
-        "/": "/pages/home.html",
-        "/about": "/pages/about.html",
-        "/contact": "/pages/contact.html",
-        404: "/pages/404.html",
-      };
-
-      function route(event) {
-        event = event || window.event;
-        // Se não encontrar um evento usar o evento geral presente na página
-        event.preventDefault();
-
-        window.history.pushState({}, "", event.target.href);
-
-        handle();
-      }
-
-      function handle() {
-        // const pathName = window.location.pathname;
-        const { pathname } = window.location;
-        // Forma diferente de pegar a propriedade pathname, melhor usar assim pricipalemnte se for necessário mais de uma propriedáde
-
-        const route = routes[pathname] || routes[404];
-
-        fetch(route).then((data) => {
-          console.log(data);
-        });
-
-        console.log(route);
-      }
-    </script>
+    <script src="./js/index.js" type="module">
+      
+   </script>
   </body>
 </html>
