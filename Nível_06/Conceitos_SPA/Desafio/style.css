@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --titles: #e1e1e6;
+  --text: #fff;
+  --other-pages: #e1e1e6;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Roboto", sans-serif;
+
+  /* background: none; */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+
+  padding: 4rem 7.2rem;
+
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+}
+
+a {
+  text-decoration: none;
+
+  color: hsla(240, 7%, 78%, 1);
+
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.1667rem;
+
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+a:hover {
+  transform: scale(1.2);
+}
+
+.hide {
+  display: none;
+}
+
+.other {
+  color: var(--other-pages);
+}
+
+h1 {
+  color: var(--titles, #e1e1e6);
+  font-family: Roboto;
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 60px */
+
+  margin-bottom: 1.6rem;
+}
+
+p {
+  color: var(--other-pages, #e1e1e6);
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 28.8px */
+}
+
+#universe,
+#exploration {
+  margin: 6.3rem 53rem 28.5rem 10.2rem;
+  gap: 1.6rem;
+
+  width: 64.8rem;
+}
+
+.home {
+  background: url(./assets/Home.png) no-repeat center fixed;
+  background-size: cover;
+}
+
+.universe {
+  background: url(./assets/universe.png) no-repeat center fixed;
+  background-size: cover;
+}
+
+.exploration {
+  background: url(./assets/exploration.png) no-repeat center fixed;
+  background-size: cover;
+}
+
+#home {
+  display: grid;
+  place-content: center;
+  place-items: center;
+
+  width: 50rem;
+
+  margin: 17.2rem 44rem 29.4rem;
+}
+
+#home button {
+  padding: 1.2rem 3.2rem;
+
+  color: var(--text, #fff);
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem; /* 171.429% */
+  text-transform: uppercase;
+
+  background: none;
+
+  border-color: var(--text);
+  border-radius: 5px;
+  border: 2px solid #fff;
+
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+#home button:hover {
+  transform: scale(1.1);
+}
