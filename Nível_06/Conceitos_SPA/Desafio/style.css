@@ -130,3 +130,9 @@ p {
 #home button:hover {
   transform: scale(1.1);
 }
+
+body.home .link_home,
+body.universe .link_universe,
+body.exploration .link_exploration{
+  color: var(--text);
+}
