@@ -1,36 +1,50 @@
-// Classe contendo a lógica dos dados
+export class GitHubUsers {
+  static search(username){
+    const endpoint = `https://api.github.com/users/${username}`
+
+    return fetch(endpoint)
+    .then(data => data.json())
+    .then(({login, name, public_repos, followers}) => ({login, name, public_repos, followers}))
+
+  }
+}
+
+// Lógica dos dados ( Como os dados serão estruturados)
 export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root);
     this.load();
   }
 
+  async add(username) {
+
+    console.log(username)
+    try{
+      const user = await GitHubUsers.search(username)
+    console.log(user)
+      if(user.login === undefined){
+        throw new Error("Usuário não encontrado!")
+      }
+    }catch(error){
+      alert(error.message)
+    }
+  }
+
   load() {
-    this.entries = [
-      {
-        login: "assisfaavf",
-        name: "assis",
-        public_repos: "4",
-        followers: "0",
-      },
-      {
-        login: "maykbrito",
-        name: "Mayk Brito",
-        public_repos: "76",
-        followers: "120000",
-      },
-    ];
+    this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+   
   }
 
   delete(user) {
-    const filteredEntries = this.entries.filter((entry) => {
-      entry.login != user.login;
-    });
+    const filteredEntries = this.entries.filter(entry => entry.login !== user.login);
+
+    this.entries = filteredEntries;
+
+    this.update()
   }
 }
 
-// Classe que cria a vizualização e eventos do html
-
+// Classe que vai criar a vizualização e eventos do html
 export class FavoritesView extends Favorites {
   constructor(root) {
     super(root);
@@ -38,25 +52,37 @@ export class FavoritesView extends Favorites {
     this.tbody = this.root.querySelector("table tbody");
 
     this.update();
+    this.onadd();
+  }
+
+  onadd() {
+    const addButton = this.root.querySelector(".search button") 
+    
+    addButton.onclick = () => {
+      const { value } = this.root.querySelector(".search input")
+
+      this.add(value)
+    }
   }
 
   update() {
     this.removeAllTr();
 
-    this.entries.forEach((user) => {
+    this.entries.forEach(user => {
       const row = this.createRow();
 
       row.querySelector(
         ".user img"
       ).src = `https://github.com/${user.login}.png`;
-      row.querySelector(".user img").alt = `Imagem de ${user.name}`;
+      row.querySelector(".user img").alt = `Imagem de perfil de ${user.name}`;
       row.querySelector(".user p").textContent = user.name;
+      row.querySelector(".user a").href = `https://github.com/${user.login}`;
       row.querySelector(".user span").textContent = user.login;
       row.querySelector(".repositories").textContent = user.public_repos;
       row.querySelector(".followers").textContent = user.followers;
 
       row.querySelector(".remove").onclick = () => {
-        const isOk = confirm("Tem certeza que deseja deletar essa linha ?");
+        const isOk = confirm("Tem certeza que deseja deletar esta linha ?");
 
         if (isOk) {
           this.delete(user);
@@ -67,30 +93,33 @@ export class FavoritesView extends Favorites {
     });
   }
 
+  // Função que cria linhas na tabela para que sejam atualizados os dados
   createRow() {
     const tr = document.createElement("tr");
-
-    tr.innerHTML = `
-    <td class="user">
-    <img
-    src="https://github.com/assisfaavf.png"
-    alt="imagem de assis"
-    />
-    <a target="_blank" href="https://github.com/assisfaavf"
-    ><p>assis</p>
-    <span>assisfaavf</span></a
-    >
-    </td>
-    <td class="repositories">4</td>
-    <td class="followers">0</td>
-    <td><button class="remove">&times;</button></td>
+    tr.innerHTML = ` 
+      <td class="user">
+        <img
+          src="https://github.com/diego3g.png"
+          alt="Imagem de maykbrito"
+        />
+        <a href="https://github.com/diego3g" target="_blank">
+          <p>Diego Fernandes</p>
+          <span>diego3g</span>
+        </a>
+      </td>
+      <td class="repositories">48</td>
+      <td class="followers">22503</td>
+      <td>
+        <button class="remove">&times;</button>
+      </td>
     `;
 
     return tr;
   }
 
+  // Função que remove todas as linhas da tabela para ser realizada a atualização da mesma
   removeAllTr() {
-    this.tbody.querySelectorAll("tbody tr").forEach((tr) => {
+    this.tbody.querySelectorAll("tr").forEach((tr) => {
       tr.remove();
     });
   }
