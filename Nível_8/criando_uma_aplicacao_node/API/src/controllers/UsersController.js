@@ -13,7 +13,7 @@
 */
 
 // Imprtando class AppError
-const AppError = require("../utils/AppError")
+const AppError = require("../utils/AppError");
 
 // Criando class controllers
 class UsersControllers {
@@ -22,7 +22,7 @@ class UsersControllers {
     const {name, email, password} = request.body;
 
     if(!name){
-      throw new AppError("Nome é obrigatório!")
+      throw new AppError("Nome é obrigatório!");
     }
 
     // Envia a reposta no formato de json
